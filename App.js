@@ -15,8 +15,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={ HomeNav } />
-        <Drawer.Screen name="Cart" component={ CartNav } />
+        <Drawer.Screen name="Home" component={ HomeNav } options={{ headerShown: false }}/>
+        <Drawer.Screen name="Cart" component={ CartNav } options={{ headerShown: false }}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );
