@@ -12,13 +12,15 @@ const renderItem = ({ item }) => {
             [{
                 opacity: pressed ? 0.5 : 1
             },
-                tailwind(`w-40 h-52 border items-center justify-center rounded-xl my-2 mx-2`)
+                tailwind(`w-40 h-52 items-center justify-center bg-white rounded-xl my-2 mx-2`),
+                styles.shadow
             ]}
         >
             <Image 
                 source={{ uri: item.image }}
                 style={ tailwind(`h-36 w-36`) }
             />
+                            <View style={ styles.shoeShadow }></View>
             <Text>{ item.title }</Text>
         </Pressable>
     )
@@ -30,7 +32,7 @@ const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       title: 'Salomon Ultra Glide',
-      image: 'https://i.imgur.com/kU5uiEm.jpg'
+      image: 'https://i.imgur.com/LlcNHaK.png'
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
@@ -40,12 +42,12 @@ const DATA = [
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       title: 'Hoka Speedgoat',
-      image: 'https://i.imgur.com/Msgh38B.jpg'
+      image: 'https://i.imgur.com/c5w17cZ.png'
     },
     {
         id: '58694a0f-3da1-471f-bd96-145571e29d73',
         title: 'Adidas Terrex Speed Ultra',
-        image: 'https://i.imgur.com/FzdQHP0.jpg'
+        image: 'https://i.imgur.com/HTawqnb.jpg'
     },
     {
         id: '58694a0f-3da1-471f-bd96-145571e29d74',
@@ -55,13 +57,13 @@ const DATA = [
     {
         id: '58694a0f-3da1-471f-bd96-145571e29d75',
         title: 'Salomon S/Lab Ultra 3',
-        image: 'https://i.imgur.com/scqZbJP.jpg'
+        image: 'https://i.imgur.com/upzh0vm.png'
     },
   ];
 
 const HomeScreen = () => {
     return (
-        <SafeAreaView style={ tailwind(`flex-1`) }>
+        <SafeAreaView style={ tailwind(`flex-1 bg-red-50`) }>
             <View>
                 <Image 
                     source={{ uri: 'https://i.imgur.com/zPqEQMf.jpg' }}
@@ -88,4 +90,31 @@ const HomeScreen = () => {
 
 export default HomeScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    shadow: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 3,
+    },
+    shoeShadow: {
+        position: 'absolute',
+        paddingVertical: 10,
+        paddingHorizontal: 14,
+        
+        backgroundColor: 'black',
+        width: 150,
+        height: 10,
+        borderRadius: 100,
+        opacity: 0.5,
+        shadowColor: 'black',
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 2
+    }
+})
